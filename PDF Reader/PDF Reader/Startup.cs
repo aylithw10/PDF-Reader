@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PDF_Reader.Services;
 
 namespace PDF_Reader
 {
@@ -19,6 +21,9 @@ namespace PDF_Reader
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+
+            services.AddTransient<IMergePdf, MergePdf>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
