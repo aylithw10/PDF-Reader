@@ -5,5 +5,9 @@
     <RootNamespace>PDF_Reader</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PdfPig" Version="0.1.2" />
+  </ItemGroup>
+
 
 </Project>
